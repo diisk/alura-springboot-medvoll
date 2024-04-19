@@ -15,43 +15,44 @@ import org.springframework.web.bind.annotation.RestController;
 
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
+import me.diisk.api.paciente.DadosCadastroPaciente;
+import me.diisk.api.paciente.DadosListagemPaciente;
+import me.diisk.api.paciente.Paciente;
+import me.diisk.api.paciente.PacienteRepository;
 import me.diisk.api.pessoa.DadosAtualizacaoPessoa;
-import me.diisk.api.medico.DadosCadastroMedico;
-import me.diisk.api.medico.DadosListagemMedico;
-import me.diisk.api.medico.Medico;
-import me.diisk.api.medico.MedicoRepository;
+
 
 @RestController
-@RequestMapping("medicos")
-public class MedicoController {
+@RequestMapping("pacientes")
+public class PacienteController {
 
     @Autowired
-    private MedicoRepository repository;
+    private PacienteRepository repository;
 
     @PostMapping
     @Transactional
-    public void cadastrar(@RequestBody @Valid DadosCadastroMedico dados){
-        repository.save(new Medico(dados));
+    public void cadastrar(@RequestBody @Valid DadosCadastroPaciente dados){
+        repository.save(new Paciente(dados));
     }
 
     @GetMapping
-    public Page<DadosListagemMedico> listar(@PageableDefault(size=10, sort = {"nome"}) Pageable paginacao){
-        return repository.findAllByInativoFalse(paginacao).map(DadosListagemMedico::new);
+    public Page<DadosListagemPaciente> listar(@PageableDefault(size=10, sort = {"nome"}) Pageable paginacao){
+        return repository.findAllByInativoFalse(paginacao).map(DadosListagemPaciente::new);
     }
 
     @PutMapping
     @Transactional
     public void atualizar(@RequestBody @Valid DadosAtualizacaoPessoa dados){
-        var medico = repository.getReferenceById(dados.id());
-        medico.atualizarInformacoes(dados);
+        var paciente = repository.getReferenceById(dados.id());
+        paciente.atualizarInformacoes(dados);
     }
 
     @DeleteMapping("/{id}")
     public void excluir(@PathVariable Long id){
         // repository.deleteById(id);
-        var medico = repository.getReferenceById(id);
-        medico.deletar();
-        repository.save(medico);
+        var paciente = repository.getReferenceById(id);
+        paciente.deletar();
+        repository.save(paciente);
     }
 
 }

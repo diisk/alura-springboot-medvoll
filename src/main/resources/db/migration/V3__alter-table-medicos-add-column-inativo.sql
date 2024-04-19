@@ -1,0 +1,1 @@
+alter table medicos add inativo tinyint not null default(0);
