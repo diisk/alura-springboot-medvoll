@@ -1,4 +1,4 @@
-package me.diisk.api.paciente;
+package me.diisk.api.domain.paciente;
 
 import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
@@ -11,8 +11,8 @@ import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import me.diisk.api.endereco.Endereco;
-import me.diisk.api.pessoa.DadosAtualizacaoPessoa;
+import me.diisk.api.domain.endereco.Endereco;
+import me.diisk.api.domain.pessoa.DadosAtualizacaoPessoa;
 
 @Table(name = "pacientes")
 @Entity(name = "Paciente")

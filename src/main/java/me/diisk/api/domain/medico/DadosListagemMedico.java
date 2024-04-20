@@ -1,4 +1,4 @@
-package me.diisk.api.medico;
+package me.diisk.api.domain.medico;
 
 public record DadosListagemMedico(Long id, String nome, String email, String crm, Especialidade especialidade) {
 

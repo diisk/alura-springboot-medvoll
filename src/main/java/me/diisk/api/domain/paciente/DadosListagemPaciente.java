@@ -1,6 +1,6 @@
-package me.diisk.api.paciente;
+package me.diisk.api.domain.paciente;
 
-import me.diisk.api.endereco.Endereco;
+import me.diisk.api.domain.endereco.Endereco;
 
 public record DadosListagemPaciente(Long id, String nome, String telefone, Endereco Endereco) {
 

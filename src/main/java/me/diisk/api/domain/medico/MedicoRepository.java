@@ -1,4 +1,4 @@
-package me.diisk.api.medico;
+package me.diisk.api.domain.medico;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

@@ -1,4 +1,4 @@
-package me.diisk.api.endereco;
+package me.diisk.api.domain.endereco;
 
 import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;
