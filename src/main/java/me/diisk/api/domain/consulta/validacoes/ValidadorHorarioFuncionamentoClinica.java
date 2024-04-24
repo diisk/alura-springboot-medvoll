@@ -2,10 +2,13 @@ package me.diisk.api.domain.consulta.validacoes;
 
 import java.time.DayOfWeek;
 
+import org.springframework.stereotype.Component;
+
 import me.diisk.api.domain.ValidacaoException;
 import me.diisk.api.domain.consulta.DadosAgendamentoConsulta;
 
-public class ValidadorHorarioFuncionamentoClinica {
+@Component
+public class ValidadorHorarioFuncionamentoClinica implements ValidadorAgendamentoDeConsulta{
 
     public void validar(DadosAgendamentoConsulta dados) {
         var dataConsulta = dados.data();

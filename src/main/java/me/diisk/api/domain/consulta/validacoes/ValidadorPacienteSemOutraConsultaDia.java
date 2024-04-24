@@ -1,12 +1,16 @@
 package me.diisk.api.domain.consulta.validacoes;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import me.diisk.api.domain.ValidacaoException;
 import me.diisk.api.domain.consulta.ConsultaRepository;
 import me.diisk.api.domain.consulta.DadosAgendamentoConsulta;
 
-public class ValidadorPacienteSemOutraConsultaDia {
+@Component
+public class ValidadorPacienteSemOutraConsultaDia implements ValidadorAgendamentoDeConsulta {
 
-    
+    @Autowired
     private ConsultaRepository repository;
 
     public void validar(DadosAgendamentoConsulta dados) {

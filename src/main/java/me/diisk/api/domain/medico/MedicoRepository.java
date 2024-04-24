@@ -32,7 +32,7 @@ public interface MedicoRepository extends JpaRepository<Medico, Long> {
     Medico escolherMedicoAleatorioLivreNaData(Especialidade especialidade, @NotNull @Future LocalDateTime data);
 
     @Query("""
-            select m.invativo
+            select m.inativo
             from Medico m
             where
             m.id = :medicoId
