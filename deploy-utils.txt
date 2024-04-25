@@ -1,0 +1,1 @@
+java -DALURA_DATASOURCE_URL=jdbc:mysql://localhost:3306/vollmed_api -DALURA_DATASOURCE_USERNAME=root -DALURA_DATASOURCE_PASSWORD=123456 -jar .\target\api-0.0.1-SNAPSHOT.jar --spring.profiles.active=prod
